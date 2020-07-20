@@ -1,0 +1,78 @@
+
+{% load static %}
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+
+<div class='head'>
+  <h2>네이버영화 리뷰로 영화 추천받기</h2>
+</div>
+
+<div class = "head2">
+  <h3>크롤링한 네이버 영화 리뷰 1000개에서</h3>
+  <h3>내 취향에 맞는 영화 특성 키워드를 검색하여</h3>
+  <h3>높게 WordCount된 영화 알려주기</h3>
+  <p>예시) Keyword : 감동, 반전, 행복 등등</p>
+</div>
+
+<div class = container>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'homeview' %}">홈으로 가기</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'reviewlist' %}">모든 리뷰 보러가기</a>
+        </li>
+      </ul>
+<!-- 리뷰 보여주기 -->
+<div class = "container2">
+{% for data in object_list %}
+
+<p><strong>영화제목 :</strong> {{ data.title }}</p>
+<p><strong>리뷰 :</strong> {{ data.review }}</p>
+<br/>
+
+{% endfor %}
+
+<!-- 페이지 -->
+<div class="page">
+{% if is_paginated %}
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">
+          <span>Prev</span>
+        </a>
+    {% else %}
+        <a href="#">
+          <span>Prev</span>
+        </a>
+    {% endif %}
+
+    {% for i in page_range %}
+      {% if page_obj.number == i %}
+        {{i}}
+      {% else %}
+        <a href="?page={{ i }}">{{ i }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">
+          <span>Next</span>
+        </a>
+    {% else %}
+      <li {% if not page_obj.has_next %}class="disabled"{% endif %}>
+        <a href="#">
+          <span>Next</span>
+        </a>
+      </li>
+    {% endif %}
+{% endif %}
+</div>
+</div>
+</div>
+
+<footer>
+  <h4>&copy; 아주대학교 like lion 7기 최광일</h4>
+</footer>

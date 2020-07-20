@@ -1,0 +1,135 @@
+.head{
+    color : rgb(252, 221, 155);
+    font-family: 'yg-jalnan';
+    text-align: center;
+    position : fixed;
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0px 0px 0px;
+    z-index:5;
+}
+
+.head2{
+    color : rgb(255, 255, 255);
+    font-family: 'BBTreeGB';
+    text-align: center;
+    background-color: rgb(102, 102, 102);
+    width: 100%;
+    height: 200px;
+    padding: 20px 0px 0px 0px;
+    display: block;
+    position : relative;
+    top : 60px;
+}
+
+.container{
+    position : relative;
+    padding : 80px 0px 0px 0px;
+}
+
+.container2{
+    position : relative;
+    padding : 20px 0px 0px 0px;
+}
+
+.container3{
+    display: grid;
+    position : relative;
+    margin : auto;
+    grid-template-areas:"top1 top2"
+                        "totalreview reviewlist"
+                        "bottom bottom " ;
+    grid-template-rows: 100px 800px;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.totalreview{
+    grid-area:'totalreview';
+    margin : 20px;
+    border-right : 1px solid black;
+    overflow: scroll;
+}
+
+.reviewlist{
+    grid-area:'reviewlist';
+    margin : 20px;
+    overflow: scroll;
+}
+
+#id_title{
+    width : 200px;
+}
+
+label{
+    font-family: 'yg-jalnan';
+}
+
+a:link{
+    color: rgb(252, 221, 155);
+}
+
+.top1{
+    grid-area:'top1';
+    font-family: 'BBTreeGB';
+    text-align: center;
+    border-bottom : 1px solid black; 
+    padding : 20px 0px 0px 0px;
+}
+
+.top2{
+    grid-area:'top2';
+    font-family: 'BBTreeGB';
+    text-align: center;
+    border-bottom : 1px solid black;
+    padding : 20px 0px 0px 0px;
+}
+
+.typo{
+    color: rgb(255, 160, 82);
+}
+
+.typo2{
+    color: rgb(77, 80, 250);
+}
+
+.typo3{
+    font-family: 'BBTreeGB';
+}
+
+.form{
+    text-align: center;
+}
+
+p{
+    font-size: 20px;
+}
+
+.page{
+    font-size : 30px;
+    text-align: center;
+}
+
+footer{
+    color : rgb(255, 255, 255);
+    font-family: 'BBTreeGB';
+    text-align: center;
+    background-color: rgb(102, 102, 102);
+    width: 100%;
+    height: 100px;
+    padding: 30px 0px 0px 0px;
+    display: block;
+    position : relative;
+}
+/* 폰트 */
+@font-face { font-family: 'BBTreeGB'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/BBTreeGB.woff') format('woff'); 
+            font-weight: normal; 
+            font-style: normal;
+}
+
+@font-face { font-family: 'yg-jalnan';
+             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff'); 
+             font-weight: normal; 
+             font-style: normal; 
+}
